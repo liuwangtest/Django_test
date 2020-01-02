@@ -8,10 +8,10 @@ from user.models import User
 @celery_app.task
 def upload_qiniu(file_name, file_path, user_id):
     # 调用七牛云的 SDK 上传
-    access_key = 'H-nVN0se7wqWSO1ek2CbVkwfTjQ8JIqFY8tFsU2x'
-    secret_key = '6HlyNprKRMfN3wrW6zmg91Tltf0XMVNuUCWd7GOC'
-    bucket_name = '202001'
-    bucket_domain = 'q3glfqe07.bkt.clouddn.com'
+    access_key = 'cqxGEzAS6TSU_996r3svOLytJu1hQWU3Eb7oT3PM'
+    secret_key = 'udaYEEpShey2UdioqDQuA9nACCKIeSqvQNccaja0'
+    bucket_name = 'joker123'
+    bucket_domain = 'q3h2ql4e2.bkt.clouddn.com'
 
     # 构建鉴权对象
     q = Auth(access_key, secret_key)
@@ -25,9 +25,11 @@ def upload_qiniu(file_name, file_path, user_id):
 
     # 更新用户的 avatar 字段
     avatar_url = f'{bucket_domain}/{file_name}'
+
     user = User.objects.get(id=user_id)
     user.avatar = avatar_url
     user.save()
+
     print('all done.')
 
     return True

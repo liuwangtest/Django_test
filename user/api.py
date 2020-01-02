@@ -71,14 +71,13 @@ def user_profile(request):
 
 
 def user_avatar(request):
-    # 1. 把用户上传的图片存下来
-
     # 上传后保存的文件名
     file_name = f'avatar-{request.user.id}'
 
     # 上传后保存的全路径
     file_path = f'{settings.BASE_DIR}/static/{file_name}'
 
+    # 取得用户上传得图片
     f = request.FILES['avatar']
 
     # with 上下文管理器
@@ -89,6 +88,10 @@ def user_avatar(request):
     print('save ok.')
 
     user_id = request.user.id
+    # 将图片上传到七牛云
+    # upload_qiniu(file_name, file_path, user_id)
+
+    # 使用celery异步操作
     upload_qiniu.delay(file_name, file_path, user_id)
 
     return render_json(None)

@@ -12,7 +12,7 @@ class User(models.Model):
         ('unknown', '隐藏'),
     )
 
-    phone = models.CharField(max_length=10, unique=True, verbose_name='手机号')
+    phone = models.CharField(max_length=20, unique=True, verbose_name='手机号')
     nickname = models.CharField(max_length=20, unique=True, verbose_name='昵称')
     gender = models.CharField(max_length=10, choices=SEX, verbose_name='性别')
     birth_year = models.IntegerField(default=2000, verbose_name='出生年')

@@ -1,9 +1,10 @@
 SMS_SENDSMS = "https://open.ucpaas.com/ol/sms/sendsms"
+
 MOBILE_NONE_SMS = {
-    "sid": 'a88108ca93a370050637e49ec1c905de',
-    "token": '730223d4cd49a0169ba5141e6d208cc6',
-    "appid": '44b8828cb3aa408e9b8b74059d6f2f1b',
-    "templateid": "487820",
+    "sid": '66c8ab1b2d02df7ef2fd40cfa282ef50',
+    "token": 'f5c42878e9d5d4ef43a37a4a66325117',
+    "appid": 'e61da8c3307c4254ae55886af9a9230f',
+    "templateid": "527130",
     "param": None,
     "mobile": None,
 }

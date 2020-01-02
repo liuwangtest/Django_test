@@ -26,12 +26,13 @@ def send_sms(phone):
     sms_params["param"] = f"{vcode}, 300"
 
     resp = requests.post(sms_api_url, json=sms_params)
-
     if resp.status_code == 200:
         result_json = resp.json()
+        print(result_json)
         if result_json['code'] == '000000':
             return True, result_json['msg']
         else:
+            print('由于此账号没有实名认证，发送失败')
             return False, result_json['msg']
     else:
         return False, '短信服务器错误'

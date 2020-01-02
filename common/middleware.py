@@ -22,6 +22,7 @@ class AuthMiddleware(MiddlewareMixin):
         uid = request.session.get('uid')
         if uid:
             try:
+                # 将登录用户保存在request对象中，方便之后的文件上传等操作
                 request.user = User.objects.get(id=uid)
             except User.DoesNotExist:
                 return render_json('用户不存在', errors.USER_NOT_EXIST)
