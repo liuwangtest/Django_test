@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "6657dcac-d305-4a1d-8a2c-f5f6cca60bcd",
+		"name": "bj-2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "请求验证码1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "18519189606",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{api_url}}/api/user/phone?phone=18519189606&debug_mode={{debug_mode}}",
+					"protocol": "http",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"phone"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "18519189606"
+						},
+						{
+							"key": "debug_mode",
+							"value": "{{debug_mode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "验证短信",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "18519189606",
+							"type": "text"
+						},
+						{
+							"key": "vcode",
+							"value": "6528",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://{{api_url}}/api/user/vcode"
+			},
+			"response": []
+		},
+		{
+			"name": "获取用户资料",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "18519189607",
+							"type": "text"
+						},
+						{
+							"key": "vcode",
+							"value": "1591",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://{{api_url}}/api/user/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "上传头像",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/Users/zebin/Pictures/sci-fi/ani_cat.jpeg"
+						}
+					]
+				},
+				"url": "http://{{api_url}}/api/user/avatar"
+			},
+			"response": []
+		},
+		{
+			"name": "推荐用户",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://{{api_url}}/api/swiper/users"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

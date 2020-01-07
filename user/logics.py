@@ -1,3 +1,7 @@
+'''
+celery异步执行图片的上传操作
+'''
+
 from qiniu import Auth, put_file
 
 from worker import celery_app

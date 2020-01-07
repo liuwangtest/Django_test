@@ -25,7 +25,7 @@ class User(models.Model):
     def age(self):
         # 获取当前日期
         today = datetime.date.today()
-
+        print(today)
         # 用出生年月日构造日期
         birth_date = datetime.date(self.birth_year, self.birth_month, self.birth_day)
 

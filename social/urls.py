@@ -16,10 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from user import api as user_api
+from swiper import api as swiper_api
 
 urlpatterns = [
     url(r'api/user/phone', user_api.user_phone),
     url(r'api/user/vcode', user_api.user_vcode),
     url(r'api/user/profile', user_api.user_profile),
     url(r'api/user/avatar', user_api.user_avatar),
+    url(r'api/swiper/users', swiper_api.swiper_users),
+    url(r'api/swiper/like', swiper_api.swiper_like),
 ]
